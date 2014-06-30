@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Quantify</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->        
+
+        <!-- Add your site or application content here -->
+        
+        <div class="container">
+            <h2 class="title">Family</h2>
+            <svg class="d3" id="family"></svg>
+        </div>
+    
+        <div class="container">
+            <h2 class="title">The Days</h2>
+            <svg class="d3" id="daytime"></svg>
+        </div>
+        
+        <div class="container">
+            <h2 class="title">Accomodation</h2>
+            <svg class="d3" id="houses"></svg>
+        </div>
+        
+        <div class="container">
+            <h2 class="title">UK politics</h2>
+            <svg class="d3" id="primeministers"></svg>
+        </div>
+        <div class="container">
+            <h2 class="title">US politics</h2>
+            <svg class="d3" id="presidents"></svg>
+        </div>
+
+        <div class="container">
+            <h2 class="title">Web</h2>
+            <svg class="d3" id="web"></svg>
+        </div>
+
+        <script src="js/all.min.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/collinder.js"></script>
+        <script src="js/periods.js"></script>
+        <script src="js/eventflags.js"></script>
+        <script src="js/houses.js"></script>
+
+        <script src="js/daytime-chart.js"></script>        
+        <script type="text/javascript">
+
+        var config = {
+            barCol:'#999',
+            width:960,
+            // height:2000,
+            pad:5,
+        }
+
+        var me = {
+                born:   the_dates.findWhere({name:'born'}).get('date'),
+                now:    the_dates.findWhere({name:'now'}).get('date'),
+            };
+
+        me.scale = d3.time.scale()            
+            .domain([me.born,me.now])
+            .range([config.pad,config.width-config.pad]);   
+
+        $(window).on('load',function()
+        {                    
+            var daytime = new MultiView({
+                width:960, height:190,
+                el:$('#daytime'),
+                x:0,y:0,
+                dates:the_dates.whereBookend({group:'days'},true,true),
+                barheight:40,
+                colour:'goldenrod',
+            })
+            .addXAxis()
+            .render()            
+            .setMainOffset(0,120);
+
+            var presidents = new PeriodsView({
+                width:960, height:100,
+                el:$('#presidents'),
+                x:0,y:0,
+                dates:the_dates.whereBookend({group:'usp'},false,true),
+                barheight:15,
+                colour:'goldenrod',
+            })
+            .render()
+            .setMainOffset(0,60);
+
+            var primeministers = new PeriodsView({
+                width:960, height:100,
+                el:$('#primeministers'),
+                x:0,y:0,
+                dates:the_dates.whereBookend({group:'pms'},false,true),
+                barheight:15,
+                colour:'goldenrod',
+            })
+            .render()
+            .setMainOffset(0,60);
+
+            var tech = new EventFlagView({
+                width:960, height:160,
+                el:$('#web'),
+                x:0,y:0,
+                dates:the_dates.whereBookend({group:'my-tech'},false,true),
+                barheight:5,
+                colour:'goldenrod',
+            })
+            .render()
+            .setMainOffset(0,120)
+            .addXAxis();
+
+            var family = new EventFlagView({
+                width:960, height:120,
+                el:$('#family'),
+                x:0,y:0,
+                dates:the_dates.whereBookend({group:'family'},false,true),
+                barheight:5,
+                colour:'goldenrod',
+            })
+            .render()
+            .setMainOffset(0,90)
+            .addXAxis();
+
+            var houses = new Houses({
+                width:960, height:190,
+                el:$('#houses'),
+                x:0,y:0,
+                dates:the_dates.whereBookend({group:'houses'},false,true),
+                barheight:30,
+                colour:'goldenrod',
+            })
+            .render()
+            .addXAxis()
+            .setMainOffset(0,130);
+
+        }); 
+        </script>
+        <script defer src="//localhost:3000/socket.io/socket.io.js"></script>
+        <script defer src="//localhost:3001/client/browser-sync-client.0.9.1.js"></script>    
+    </body>
+</html>
