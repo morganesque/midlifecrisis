@@ -1,0 +1,14 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "<2.0.0",
+    "modernizr": "latest",
+    "normalize-css": "latest",
+    "inuit.css": "latest",
+    "html5-boilerplate": "latest",
+    "backbone": "~1.1.2",
+    "d3": "~3.4.8",
+    "datejs": "~1.0.0-rc1"
+  }
+}
