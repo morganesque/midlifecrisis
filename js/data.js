@@ -110,6 +110,11 @@ the_dates.add({
     date: Date.parse('October 27th 2006'),
     group: 'houses',
 });
+the_dates.add({
+    name: 'renton lea',
+    date: Date.parse('October 24th 2014'),
+    group: 'houses',
+});
 
 /*
     Days - What I was up to during the day.
