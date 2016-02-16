@@ -160,13 +160,18 @@ the_dates.add({
     group: 'days',
 });
 the_dates.add({
-    name: 'common',
+    name: 'common agency',
     date: Date.parse('October 1st 2009'),
     group: 'days',
 });
 the_dates.add({
     name: 'freelance',
     date: Date.parse('November 1st 2011'),
+    group: 'days',
+});
+the_dates.add({
+    name: 'dwp',
+    date: Date.parse('April 13th 2015'),
     group: 'days',
 });
 
