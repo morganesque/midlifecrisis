@@ -169,6 +169,11 @@ the_dates.add({
     date: Date.parse('November 1st 2011'),
     group: 'days',
 });
+the_dates.add({
+    name: 'dwp',
+    date: Date.parse('April 13th 2015'),
+    group: 'days',
+});
 
 /*
     UK Prime Ministers
