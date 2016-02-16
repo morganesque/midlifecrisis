@@ -161,12 +161,12 @@ the_dates.add({
 });
 the_dates.add({
     name: 'common',
-    date: Date.parse('October 1st 2009'),
+    date: Date.parse('October 1st 2008'),
     group: 'days',
 });
 the_dates.add({
     name: 'freelance',
-    date: Date.parse('November 1st 2011'),
+    date: Date.parse('November 1st 2010'),
     group: 'days',
 });
 the_dates.add({
