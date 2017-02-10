@@ -208,6 +208,11 @@ the_dates.add({
     date: Date.parse("11 May 2010"),
     group: 'pms',    
 });
+the_dates.add({
+    name: "David Cameron",
+    date: Date.parse("13 July 2016"),
+    group: 'pms',    
+});
 
 /*
     US Presidents
@@ -245,6 +250,11 @@ the_dates.add({
 the_dates.add({
     name: "Barack Obama",
     date: Date.parse("20 January 2009"),
+    group: 'usp',    
+});
+the_dates.add({
+    name: "Donlad Trump",
+    date: Date.parse("20 January 2017"),
     group: 'usp',    
 });
 
