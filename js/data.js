@@ -1,13 +1,13 @@
 var DateModel = Backbone.Model.extend({});
 
 var DatesCollection = Backbone.Collection.extend({
-    
+
     model:DateModel,
-    
+
     comparator:'date',
 
     whereBookend:function(searchObj,front,back)
-    {            
+    {
         var res = this.where(searchObj)
         if (front) res.unshift(this.findWhere({name:'born'}));
         if (back) res.push(this.findWhere({name:'now'}));
@@ -118,7 +118,7 @@ the_dates.add({
 
 /*
     Days - What I was up to during the day.
-*/        
+*/
 the_dates.add({
     name: 'infant school',
     date: Date.parse('September 1st 1981'),
@@ -177,132 +177,142 @@ the_dates.add({
 
 /*
     UK Prime Ministers
-*/  
+*/
 the_dates.add({
     name: "James Callaghan",
     date: Date.parse("5 April 1976"),
-    group: 'pms',    
+    group: 'pms',
 });
 the_dates.add({
     name: "Margaret Thatcher",
     date: Date.parse("4 May 1979"),
-    group: 'pms',    
+    group: 'pms',
 });
 the_dates.add({
     name: "John Major",
     date: Date.parse("28 November 1990"),
-    group: 'pms',    
+    group: 'pms',
 });
 the_dates.add({
     name: "Tony Blair",
     date: Date.parse("2 May 1997"),
-    group: 'pms',    
+    group: 'pms',
 });
 the_dates.add({
     name: "Gordon Brown",
     date: Date.parse("27 June 2007"),
-    group: 'pms',    
+    group: 'pms',
 });
 the_dates.add({
     name: "David Cameron",
     date: Date.parse("11 May 2010"),
-    group: 'pms',    
+    group: 'pms',
+});
+the_dates.add({
+    name: "Theresa May",
+    date: Date.parse("13 July 2016"),
+    group: 'pms',
 });
 
 /*
     US Presidents
-*/        
+*/
 the_dates.add({
     name: "Gerald Ford",
     date: Date.parse("9 August 1974"),
-    group: 'usp',    
+    group: 'usp',
 });
 the_dates.add({
     name: "Jimmy Carter",
     date: Date.parse("20 January 1977"),
-    group: 'usp',    
+    group: 'usp',
 });
 the_dates.add({
     name: "Ronald Reagan",
     date: Date.parse("20 January 1981"),
-    group: 'usp',    
+    group: 'usp',
 });
 the_dates.add({
     name: "George H. W. Bush",
     date: Date.parse("20 January 1989"),
-    group: 'usp',    
+    group: 'usp',
 });
 the_dates.add({
     name: "Bill Clinton",
     date: Date.parse("20 January 1993"),
-    group: 'usp',    
+    group: 'usp',
 });
 the_dates.add({
     name: "George W. Bush",
     date: Date.parse("20 January 2001"),
-    group: 'usp',    
+    group: 'usp',
 });
 the_dates.add({
     name: "Barack Obama",
     date: Date.parse("20 January 2009"),
-    group: 'usp',    
+    group: 'usp',
+});
+the_dates.add({
+    name: "Donlad Trump",
+    date: Date.parse("20 January 2017"),
+    group: 'usp',
 });
 
 /*
     my-Tech stuff
-*/        
+*/
 the_dates.add({
     name: "joined Facebook",
     date: Date.parse("May 23, 2007"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
 the_dates.add({
     name: "first Flickr upload",
     date: Date.parse("November 25, 2004"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
 the_dates.add({
     name: "first Tweet",
     date: Date.parse("November 23, 2006"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
 the_dates.add({
     name: "first Delicious bookmark",
     date: Date.parse("4th February 2005"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
 the_dates.add({
     name: "iPhone launched",
     date: Date.parse("June 29, 2007"),
-    group: 'tech',    
+    group: 'tech',
 });
 the_dates.add({
     name: "iPod launched",
     date: Date.parse("October 23, 2001"),
-    group: 'tech',    
+    group: 'tech',
 });
 the_dates.add({
     name: "first Amazon purchase",
     date: Date.parse("22 December 1999"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
 the_dates.add({
     name: "joined Spotify",
     date: Date.parse("October 15, 2008"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
 the_dates.add({
     name: "Gmail account",
     date: Date.parse("August 27, 2004"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
 the_dates.add({
     name: "first Scrobble",
     date: Date.parse("10 May 2006"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
 the_dates.add({
     name: "first Instagram",
     date: Date.parse("1 January 2012"),
-    group: 'my-tech',    
+    group: 'my-tech',
 });
